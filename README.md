@@ -106,6 +106,45 @@ Message Decoded: "Find me in HopSec Island"
 
 ---
 
+### 🐧 Linux CLI - Shells Bells
+**Difficulty**: Easy | **Score**: 3/6 (55%) | **Event**: Advent of Cyber 2025 - Day 1
+
+Explore the Linux command-line interface to investigate McSkidy's kidnapping and uncover the "Eggstrike" malware attack by Sir Carrotbane. Master essential Linux commands while analyzing logs, finding hidden files, and performing bash history forensics.
+
+[📖 View complete writeup →](./linux-cli/)
+
+**Skills demonstrated**:
+- ✅ Linux CLI fundamentals (ls, cat, cd, pwd, grep, find)
+- ✅ Hidden file discovery with dotfiles
+- ✅ Log analysis for failed login attempts
+- ✅ Shell script malware analysis
+- ✅ Privilege escalation with sudo su
+- ✅ Bash history forensics
+- ✅ Linux special symbols (|, >, >>, &&)
+
+**Attack chain discovered**:
+```
+HopSec Island Brute Force Attack
+         ↓
+Root Compromise on SOC-mas Server
+         ↓
+Eggstrike Malware Deployment
+         ↓
+Christmas Wishlist Theft & Replacement
+         ↓
+Data Exfiltration to files.hopsec.thm
+         ↓
+Message: "THM{until-we-meet-again}"
+```
+
+**Critical findings**:
+- 4 malicious HopSec domains
+- 3 flags discovered
+- 1 malware script (eggstrike.sh)
+- Wishlist data exfiltration detected
+
+---
+
 ## 🛠️ Tools and Technologies
 
 - **Wireshark/tshark** - PCAP analysis
@@ -127,7 +166,6 @@ tryhackme-blueteam-ctf/
 ├── c2carnage/                 # C2 Carnage CTF
 │   ├── README.md              # Overview
 │   ├── writeup.md             # Detailed technical writeup
-│   ├── answers.txt            # All answers
 │   ├── SUMMARY.md             # Executive summary with IOCs
 │   ├── COMPLETION.md          # Completion document
 │   ├── INDEX.md               # Navigation guide
@@ -138,15 +176,27 @@ tryhackme-blueteam-ctf/
 │   ├── screenshots/           # Screenshots
 │   └── notes/                 # Analysis notes
 │
-└── zeek-exercises/            # Zeek Exercises CTF
+├── zeek-exercises/            # Zeek Exercises CTF
+│   ├── README.md              # Overview
+│   ├── writeup.md             # Detailed technical writeup
+│   ├── SUMMARY.md             # Executive summary
+│   ├── COMPLETION.md          # Completion certificate
+│   ├── scripts/               # Analysis scripts
+│   ├── screenshots/           # Screenshots
+│   └── notes/                 # Investigation notes
+│
+├── yara-rules/                # YARA Rules CTF
+│   ├── README.md              # Overview
+│   ├── SUMMARY.md             # Executive summary
+│   ├── COMPLETION.md          # Completion certificate
+│   ├── scripts/               # Analysis scripts
+│   └── screenshots/           # Evidence screenshots
+│
+└── linux-cli/                 # Linux CLI - Shells Bells
     ├── README.md              # Overview
-    ├── writeup.md             # Detailed technical writeup
-    ├── answers.txt            # All answers
     ├── SUMMARY.md             # Executive summary
     ├── COMPLETION.md          # Completion certificate
-    ├── scripts/               # Analysis scripts
-    ├── screenshots/           # Screenshots
-    └── notes/                 # Investigation notes
+    └── screenshots/           # Evidence screenshots
 ```
 
 ---
@@ -188,13 +238,13 @@ cat dns.log | zeek-cut query qtype_name
 
 | Metric | Value |
 |--------|-------|
-| CTFs completed | 3 |
-| Average success rate | 100% |
-| Total questions | 37 |
-| Questions answered | 37 |
-| Documentation pages | 100+ |
+| CTFs completed | 4 |
+| Average success rate | 93% |
+| Total questions | 43 |
+| Questions answered | 40 |
+| Documentation pages | 150+ |
 | PCAPs analyzed | 4 |
-| Attack chains identified | 7 |
+| Attack chains identified | 8 |
 
 ---
 
@@ -216,7 +266,6 @@ This repository demonstrates the following skills:
 - Incident response and threat hunting
 - Network security monitoring with Zeek
 - Log4J vulnerability exploitation analysis
-- YARA rule creation for malware detection
 
 ### Technical Documentation
 - Structured and detailed writeups
@@ -257,6 +306,7 @@ This repository is provided "as is" for educational purposes. Writeups and analy
 
 ## 🔄 Updates
 
+- **2025-12-25**: Added Linux CLI CTF (Advent of Cyber 2025 Day 1) - 55% completed
 - **2025-12-25**: Added YARA Rules CTF (Advent of Cyber 2025 Day 13) - 100% completed
 - **2025-12-25**: Added Zeek Exercises CTF - 100% completed
 - **2025-12-24**: Added C2 Carnage CTF - 100% completed
