@@ -80,9 +80,7 @@ graph TD
 ## 💻 Technologies Used
 
 - **Wireshark/tshark**: PCAP analysis
-- **bash**: Analysis automation
-- **Playwright**: TryHackMe interaction
-- **unzip**: Artifact extraction
+- **bash**: Analysis automation- **unzip**: Artifact extraction
 - **DNS analysis**: Domain resolution
 - **SSL/TLS analysis**: Certificate inspection
 
