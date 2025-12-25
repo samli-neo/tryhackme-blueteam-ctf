@@ -1,0 +1,59 @@
+# TryHackMe - Zeek Exercises - All Answers
+# Completion Date: 2025-12-25
+# Score: 93%
+
+## Task 1: Introduction
+Read the task above.
+Answer: No answer needed
+
+## Task 2: Anomalous DNS (4 questions)
+
+Q1: Investigate the dns-tunneling.pcap file. Investigate the dns.log file. What is the number of DNS records linked to the IPv6 address?
+Answer: 320
+
+Q2: Investigate the conn.log file. What is the longest connection duration?
+Answer: 9.420791
+
+Q3: Investigate the dns.log file. Filter all unique DNS queries. What is the number of unique domain queries?
+Answer: 6
+
+Q4: There are a massive amount of DNS queries sent to the same domain. This is abnormal. Let's find out which hosts are involved in this activity. Investigate the conn.log file. What is the IP address of the source host?
+Answer: 10.20.57.3
+
+## Task 3: Phishing (6 questions)
+
+Q1: Investigate the logs. What is the suspicious source address? Enter your answer in defanged format.
+Answer: 10[.]6[.]27[.]102
+
+Q2: Investigate the http.log file. Which domain address were the malicious files downloaded from? Enter your answer in defanged format.
+Answer: smart-fax[.]com
+
+Q3: Investigate the malicious document in VirusTotal. What kind of file is associated with the malicious document?
+Answer: VBA
+
+Q4: Investigate the extracted malicious .exe file. What is the given file name in Virustotal?
+Answer: PleaseWaitWindow.exe
+
+Q5: Investigate the malicious .exe file in VirusTotal. What is the contacted domain name? Enter your answer in defanged format.
+Answer: hopto[.]org
+
+Q6: Investigate the http.log file. What is the request name of the downloaded malicious .exe file?
+Answer: knr.exe
+
+## Task 4: Log4J (4 questions)
+
+Q1: Investigate the log4shell.pcapng file with detection-log4j.zeek script. Investigate the signature.log file. What is the number of signature hits?
+Answer: 3
+
+Q2: Investigate the http.log file. Which tool is used for scanning?
+Answer: Nmap
+
+Q3: Investigate the http.log file. What is the extension of the exploit file?
+Answer: .class
+
+Q4: Investigate the log4j.log file. Decode the base64 commands. What is the name of the created file?
+Answer: pwned
+
+## Task 5: Conclusion
+Read the task above.
+Answer: No answer needed
