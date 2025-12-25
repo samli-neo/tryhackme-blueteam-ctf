@@ -5,6 +5,8 @@
 *.dll
 .env
 credentials.json
+answers.txt
+intermediate_answers.txt
 
 # IDE
 .vscode/
