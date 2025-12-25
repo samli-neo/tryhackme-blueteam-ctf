@@ -1,0 +1,20 @@
+# Sensitive files
+*.pcap
+*.zip
+*.exe
+*.dll
+.env
+credentials.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp
+*.tmp
+*.log
+/tmp/
