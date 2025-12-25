@@ -42,7 +42,7 @@ Malicious Email → Word Macros → Squirrelwaffle
 ---
 
 ### 🔍 Zeek Exercises - Network Security Monitoring
-**Difficulty**: Medium | **Score**: 15/16 (93%)
+**Difficulty**: Medium | **Score**: 14/14 (100%)
 
 Hands-on practice with Zeek (formerly Bro) network security monitoring tool covering DNS tunneling detection, phishing investigation, and Log4J exploitation analysis.
 
@@ -69,6 +69,40 @@ Log4Shell: Nmap → JNDI Injection → LDAP .class → RCE (pwned)
 - 5 Zeek log types examined
 - 3 PCAPs investigated
 - DNS tunneling, phishing, and Log4J exploitation
+
+---
+
+### 🔐 YARA Rules - YARA mean one!
+**Difficulty**: Medium | **Score**: 3/3 (100%) | **Points**: 24 | **Event**: Advent of Cyber 2025 - Day 13
+
+Learn how YARA rules can be used to detect anomalies and malicious patterns. Create YARA rules with regex to extract hidden messages from Easter preparation images and locate McSkidy.
+
+[📖 View complete writeup →](./yara-rules/)
+
+**Skills demonstrated**:
+- ✅ YARA rule syntax and structure (meta, strings, conditions)
+- ✅ Regular expression pattern matching
+- ✅ String type mastery (text, hex, regex)
+- ✅ YARA modifiers (nocase, wide, ascii, xor, base64)
+- ✅ Recursive directory scanning with YARA
+- ✅ Hidden message extraction and decoding
+
+**Challenge solved**:
+```
+5 Images with "TBFC:<code>" Patterns
+         ↓
+YARA Rule: /TBFC:[A-Za-z0-9]+/
+         ↓
+Code Word Extraction
+         ↓
+Message Decoded: "Find me in HopSec Island"
+```
+
+**Key concepts**:
+- YARA rule architecture and components
+- Pattern matching for malware detection
+- Real-world use cases (IcedID trojan detection)
+- Defensive applications in SOC operations
 
 ---
 
@@ -154,13 +188,13 @@ cat dns.log | zeek-cut query qtype_name
 
 | Metric | Value |
 |--------|-------|
-| CTFs completed | 2 |
-| Average success rate | 96.5% |
-| Total questions | 36 |
-| Questions answered | 35 |
+| CTFs completed | 3 |
+| Average success rate | 100% |
+| Total questions | 37 |
+| Questions answered | 37 |
 | Documentation pages | 100+ |
 | PCAPs analyzed | 4 |
-| Attack chains identified | 6 |
+| Attack chains identified | 7 |
 
 ---
 
@@ -182,6 +216,7 @@ This repository demonstrates the following skills:
 - Incident response and threat hunting
 - Network security monitoring with Zeek
 - Log4J vulnerability exploitation analysis
+- YARA rule creation for malware detection
 
 ### Technical Documentation
 - Structured and detailed writeups
@@ -222,8 +257,9 @@ This repository is provided "as is" for educational purposes. Writeups and analy
 
 ## 🔄 Updates
 
-- **2025-12-25**: Added Zeek Exercises CTF (93% completed)
-- **2025-12-24**: Added C2 Carnage CTF (100% completed)
+- **2025-12-25**: Added YARA Rules CTF (Advent of Cyber 2025 Day 13) - 100% completed
+- **2025-12-25**: Added Zeek Exercises CTF - 100% completed
+- **2025-12-24**: Added C2 Carnage CTF - 100% completed
 - Repository created and initial documentation
 
 ---
