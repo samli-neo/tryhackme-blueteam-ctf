@@ -41,9 +41,42 @@ Malicious Email → Word Macros → Squirrelwaffle
 
 ---
 
+### 🔍 Zeek Exercises - Network Security Monitoring
+**Difficulty**: Medium | **Score**: 15/16 (93%)
+
+Hands-on practice with Zeek (formerly Bro) network security monitoring tool covering DNS tunneling detection, phishing investigation, and Log4J exploitation analysis.
+
+[📖 View complete writeup →](./zeek-exercises/)
+
+**Skills demonstrated**:
+- ✅ Zeek log analysis and investigation
+- ✅ DNS tunneling detection
+- ✅ Phishing campaign investigation
+- ✅ Malware analysis with VirusTotal
+- ✅ Log4J exploitation detection (CVE-2021-44228)
+- ✅ Base64 payload decoding
+- ✅ IOC extraction and defanging
+
+**Identified attack chains**:
+```
+DNS Tunneling: 10.20.57.3 → 320 IPv6 queries → Data exfiltration
+Phishing: Email → VBA Macros → smart-fax.com → C2 (hopto.org)
+Log4Shell: Nmap → JNDI Injection → LDAP .class → RCE (pwned)
+```
+
+**Critical IOCs**:
+- 3 attack scenarios analyzed
+- 5 Zeek log types examined
+- 3 PCAPs investigated
+- DNS tunneling, phishing, and Log4J exploitation
+
+---
+
 ## 🛠️ Tools and Technologies
 
 - **Wireshark/tshark** - PCAP analysis
+- **Zeek (Bro)** - Network security monitoring
+- **VirusTotal** - Malware analysis
 - **Bash scripting** - Automation
 - **Python** - Data processing
 - **Git** - Version control
@@ -57,19 +90,29 @@ Malicious Email → Word Macros → Squirrelwaffle
 tryhackme-blueteam-ctf/
 ├── README.md                  # This file
 │
-└── c2carnage/                 # C2 Carnage CTF
+├── c2carnage/                 # C2 Carnage CTF
+│   ├── README.md              # Overview
+│   ├── writeup.md             # Detailed technical writeup
+│   ├── answers.txt            # All answers
+│   ├── SUMMARY.md             # Executive summary with IOCs
+│   ├── COMPLETION.md          # Completion document
+│   ├── INDEX.md               # Navigation guide
+│   ├── scripts/               # Analysis scripts
+│   │   ├── complete_analysis.sh
+│   │   ├── analyze_pcap.sh
+│   │   └── analyze_c2.sh
+│   ├── screenshots/           # Screenshots
+│   └── notes/                 # Analysis notes
+│
+└── zeek-exercises/            # Zeek Exercises CTF
     ├── README.md              # Overview
     ├── writeup.md             # Detailed technical writeup
     ├── answers.txt            # All answers
-    ├── SUMMARY.md             # Executive summary with IOCs
-    ├── COMPLETION.md          # Completion document
-    ├── INDEX.md               # Navigation guide
+    ├── SUMMARY.md             # Executive summary
+    ├── COMPLETION.md          # Completion certificate
     ├── scripts/               # Analysis scripts
-    │   ├── complete_analysis.sh
-    │   ├── analyze_pcap.sh
-    │   └── analyze_c2.sh
     ├── screenshots/           # Screenshots
-    └── notes/                 # Analysis notes
+    └── notes/                 # Investigation notes
 ```
 
 ---
@@ -86,14 +129,23 @@ cd tryhackme-blueteam-ctf
 # View a specific CTF
 cd c2carnage
 cat README.md
+
+# View Zeek Exercises
+cd zeek-exercises
+cat README.md
 ```
 
 ### Using Analysis Scripts
 
 ```bash
-# Analyze a similar PCAP
+# Analyze a similar PCAP with tshark
 cd c2carnage/scripts
 ./complete_analysis.sh /path/to/your.pcap
+
+# Analyze with Zeek
+cd zeek-exercises
+zeek -C -r /path/to/your.pcap
+cat dns.log | zeek-cut query qtype_name
 ```
 
 ---
@@ -102,11 +154,13 @@ cd c2carnage/scripts
 
 | Metric | Value |
 |--------|-------|
-| CTFs completed | 1 |
-| Success rate | 100% |
-| Total points | 600 |
-| Scripts created | 3 |
-| Documentation pages | 50+ |
+| CTFs completed | 2 |
+| Average success rate | 96.5% |
+| Total questions | 36 |
+| Questions answered | 35 |
+| Documentation pages | 100+ |
+| PCAPs analyzed | 4 |
+| Attack chains identified | 6 |
 
 ---
 
@@ -119,18 +173,22 @@ This repository demonstrates the following skills:
 - Attack pattern identification
 - Infection timeline reconstruction
 - Indicators of compromise (IOCs) extraction
+- DNS tunneling detection
 
 ### Blue Team Operations
-- Malware detection
-- Network protocol analysis
-- Event correlation
-- Incident response
+- Malware detection with VirusTotal
+- Network protocol analysis (HTTP, HTTPS, DNS, SMTP)
+- Event correlation across multiple log sources
+- Incident response and threat hunting
+- Network security monitoring with Zeek
+- Log4J vulnerability exploitation analysis
 
 ### Technical Documentation
 - Structured and detailed writeups
 - Reusable and commented scripts
 - Reproducible methodology
 - Knowledge sharing
+- IOC defanging and responsible disclosure
 
 ---
 
@@ -164,6 +222,7 @@ This repository is provided "as is" for educational purposes. Writeups and analy
 
 ## 🔄 Updates
 
+- **2025-12-25**: Added Zeek Exercises CTF (93% completed)
 - **2025-12-24**: Added C2 Carnage CTF (100% completed)
 - Repository created and initial documentation
 
@@ -185,4 +244,4 @@ For questions or discussions about analysis techniques:
 
 **Happy Hacking & Stay Blue Team! 🛡️**
 
-*Last updated: 2025-12-24*
+*Last updated: 2025-12-25*
