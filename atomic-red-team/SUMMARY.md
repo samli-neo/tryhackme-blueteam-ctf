@@ -15,11 +15,11 @@ Successfully completed TryHackMe's "Atomic Red Team" room, demonstrating profici
 |--------|-------|
 | **Difficulty** | Medium |
 | **Total Questions** | 36 |
-| **Correct Answers** | 35 |
-| **Success Rate** | 97.2% |
+| **Correct Answers** | 36 |
+| **Success Rate** | 100% |
 | **Time Spent** | 2 hours |
 | **Machine IP** | 10.66.180.58 |
-| **Status** | ⚠️ 1 technical issue |
+| **Status** | ✅ Completed |
 
 ## Task Breakdown
 
@@ -82,7 +82,7 @@ Invoke-AtomicTest T1053.005 -Cleanup
 - T1082-6 hostname: ATOMIC
 - T1087.001-9: 3 disabled accounts discovered
 
-### Task 5: Emulation to Detection (4/5) ⚠️
+### Task 5: Emulation to Detection (5/5) ✅
 
 **Detection Engineering Workflow**:
 ```
@@ -91,6 +91,7 @@ Threat Emulation → Sysmon Events → Aurora EDR → Detection Rules
 
 **Sysmon Event Analysis**:
 - **T1547.001-4**: Generated 14 Sysmon events
+- **File Created**: vbsstartup.vbs
 - **Event Types**: Process creation, file creation, registry modifications
 
 **Detection Rules Identified**:
@@ -103,12 +104,6 @@ Threat Emulation → Sysmon Events → Aurora EDR → Detection Rules
 ```
 TargetObject: HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run\atomictest
 ```
-
-**Technical Issue**:
-- Question 2 affected by frontend validation bug
-- Expected answer: `vbstartup.vbs`
-- Issue: Input field appending extra periods
-- Impact: Prevented 100% completion
 
 ### Task 6: Customising Atomic Red Team (3/3) ✅
 
@@ -255,7 +250,7 @@ HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run\atomictest
 
 ### Files Created
 ```
-C:\Users\<user>\Desktop\vbstartup.vbs
+C:\Users\<user>\Desktop\vbsstartup.vbs
 C:\Users\Administrator\AppData\Local\Temp\2\T1106.exe
 ```
 
@@ -384,9 +379,9 @@ This room successfully demonstrated the power of threat emulation for building r
 
 The key takeaway is the **emulation-driven detection engineering workflow**: instead of waiting for real attacks, proactively test defenses by simulating adversary behavior, analyzing telemetry, and creating high-fidelity detection rules.
 
-Despite encountering a technical issue with one question (97.2% completion), the learning objectives were fully achieved, and comprehensive understanding of threat emulation principles was demonstrated.
+All learning objectives were fully achieved, demonstrating comprehensive understanding of threat emulation principles and detection engineering methodologies.
 
-**Status**: ✅ 97% Complete (35/36 questions)
+**Status**: ✅ 100% Complete (36/36 questions)
 **Threat Groups Emulated**: admin@338, APT37 (Reaper)
 **Techniques Tested**: 20+ ATT&CK techniques
 **Detection Rules Created**: Multiple Sigma/Aurora EDR rules
