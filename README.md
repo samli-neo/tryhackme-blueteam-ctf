@@ -203,7 +203,7 @@ Scenario 2: Reverse Shell (TCP/4444 - Metasploit)
 ---
 
 ### ⚔️ Atomic Red Team - Threat Emulation
-**Difficulty**: Medium | **Score**: 35/36 (97%) | **Points**: TBD
+**Difficulty**: Medium | **Score**: 36/36 (100%) | **Points**: TBD
 
 Learn threat emulation fundamentals using Atomic Red Team framework. Execute MITRE ATT&CK-based tests, create detections with Sysmon and Aurora EDR, and emulate APT37 (Reaper) threat group.
 
@@ -349,9 +349,9 @@ cat dns.log | zeek-cut query qtype_name
 | Metric | Value |
 |--------|-------|
 | CTFs completed | 7 |
-| Average success rate | 99.2% |
+| Average success rate | 100% |
 | Total questions | 125 |
-| Questions answered | 124 |
+| Questions answered | 125 |
 | Documentation pages | 250+ |
 | PCAPs analyzed | 6+ |
 | Attack chains identified | 11 |
@@ -421,7 +421,7 @@ This repository is provided "as is" for educational purposes. Writeups and analy
 
 ## 🔄 Updates
 
-- **2025-12-26**: Added Atomic Red Team - 97% completed (1 technical issue)
+- **2025-12-26**: Added Atomic Red Team - 100% completed
 - **2025-12-26**: Added Snort Challenge - Live Attacks - 100% completed
 - **2025-12-26**: Added Snort Challenge - The Basics - 100% completed
 - **2025-12-25**: Added Linux CLI CTF (Advent of Cyber 2025 Day 1) - 100% completed
