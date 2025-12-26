@@ -202,11 +202,51 @@ Scenario 2: Reverse Shell (TCP/4444 - Metasploit)
 
 ---
 
+### ⚔️ Atomic Red Team - Threat Emulation
+**Difficulty**: Medium | **Score**: 35/36 (97%) | **Points**: TBD
+
+Learn threat emulation fundamentals using Atomic Red Team framework. Execute MITRE ATT&CK-based tests, create detections with Sysmon and Aurora EDR, and emulate APT37 (Reaper) threat group.
+
+[📖 View complete writeup →](./atomic-red-team/)
+
+**Skills demonstrated**:
+- ✅ Atomic Red Team framework execution
+- ✅ Invoke-AtomicRedTeam PowerShell module
+- ✅ MITRE ATT&CK Navigator mapping
+- ✅ Sysmon event log analysis
+- ✅ Aurora EDR detection rule creation
+- ✅ APT37 threat group emulation
+- ✅ Detection engineering workflow
+
+**Threat emulation achieved**:
+```
+APT37 (Reaper) → 29 ATT&CK Techniques
+    ↓
+21 Atomic Tests Available
+    ↓
+Sysmon Events (1, 11, 13) → Aurora EDR Detection
+    ↓
+Detection Rules: PowerShell Startup, Registry Persistence
+```
+
+**Key techniques tested**:
+- 20+ ATT&CK techniques emulated
+- T1547.001: Registry persistence (14 Sysmon events)
+- T1053.005: Scheduled task creation
+- T1566.001: Spearphishing attachment
+- T1003: OS credential dumping
+- Multiple detection rules validated
+
+---
+
 ## 🛠️ Tools and Technologies
 
 - **Wireshark/tshark** - PCAP analysis
 - **Zeek (Bro)** - Network security monitoring
 - **Snort** - Intrusion Detection/Prevention System
+- **Atomic Red Team** - Threat emulation framework
+- **PowerShell** - Security testing automation
+- **Sysmon** - Windows event monitoring
 - **VirusTotal** - Malware analysis
 - **Bash scripting** - Automation
 - **Python** - Data processing
@@ -260,8 +300,12 @@ tryhackme-blueteam-ctf/
 │   ├── README.md              # Overview
 │   └── SUMMARY.md             # Executive summary
 │
-└── snort-challenge-live-attacks/  # Snort Challenge - Live Attacks
-    ├── README.md              # Overview
+├── snort-challenge-live-attacks/  # Snort Challenge - Live Attacks
+│   ├── README.md              # Overview
+│   └── SUMMARY.md             # Executive summary
+│
+└── atomic-red-team/           # Atomic Red Team - Threat Emulation
+    ├── README.md              # Overview and technical writeup
     └── SUMMARY.md             # Executive summary
 ```
 
@@ -304,14 +348,15 @@ cat dns.log | zeek-cut query qtype_name
 
 | Metric | Value |
 |--------|-------|
-| CTFs completed | 6 |
-| Average success rate | 100% |
-| Total questions | 89 |
-| Questions answered | 89 |
-| Documentation pages | 200+ |
+| CTFs completed | 7 |
+| Average success rate | 99.2% |
+| Total questions | 125 |
+| Questions answered | 124 |
+| Documentation pages | 250+ |
 | PCAPs analyzed | 6+ |
-| Attack chains identified | 10 |
+| Attack chains identified | 11 |
 | Attacks blocked (live) | 2 |
+| Threat groups emulated | 2 (admin@338, APT37) |
 
 ---
 
@@ -333,6 +378,9 @@ This repository demonstrates the following skills:
 - Incident response and threat hunting
 - Network security monitoring with Zeek
 - Log4J vulnerability exploitation analysis
+- Threat emulation with Atomic Red Team
+- Detection engineering with Sysmon and Aurora EDR
+- APT emulation and analysis
 
 ### Technical Documentation
 - Structured and detailed writeups
@@ -373,6 +421,7 @@ This repository is provided "as is" for educational purposes. Writeups and analy
 
 ## 🔄 Updates
 
+- **2025-12-26**: Added Atomic Red Team - 97% completed (1 technical issue)
 - **2025-12-26**: Added Snort Challenge - Live Attacks - 100% completed
 - **2025-12-26**: Added Snort Challenge - The Basics - 100% completed
 - **2025-12-25**: Added Linux CLI CTF (Advent of Cyber 2025 Day 1) - 100% completed
@@ -399,4 +448,4 @@ For questions or discussions about analysis techniques:
 
 **Happy Hacking & Stay Blue Team! 🛡️**
 
-*Last updated: 2025-12-25*
+*Last updated: 2025-12-26*
